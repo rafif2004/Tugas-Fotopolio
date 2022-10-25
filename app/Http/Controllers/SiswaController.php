@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
-use App\models\siswa;
+use App\Models\siswa;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 class SiswaController extends Controller
