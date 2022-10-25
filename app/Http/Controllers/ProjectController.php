@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\siswa;
+use App\Models\siswa;
 use App\models\project;
 use File;
 use Illuminate\Support\Facades\Session;
