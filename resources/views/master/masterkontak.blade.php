@@ -12,21 +12,41 @@
 	<div class="row">
 		<div class="col-lg">
 			<div class="card shadow mb-4">
-		        <div style="font-weight: 500;" class="card-header bg-gradient-primary text-white">
-			        <i class="fas fa-user me-1" style="margin-right: 5px;"></i>
-			        Tambah Kontak
+		        <div style="font-weight: 500;" class="card-header bg-gradient-primary text-white">						
+			        <i class="fas fa-fw fa-address-card" style="margin-right: 5px;"></i>
+			        Jenis Kontak
 			    </div>
 			    <div class="card-body">
 					<table class="table table-hover" cellspacing="0" width="100%">
-						<tbody>
-							<tr>
-					            <th>NAMA</th>
-					            <th>Nama</th>
-                                <th>Action</th>
+						<thead>
+					        <tr>
+					            <th>No</th>
+					            <th>Jenis Kontak</th>
+                                <th class="text-center">Action</th>
 					        </tr>
+					    </thead>
+						<tbody>
+							@foreach($kontak as $i=> $item)
+                        	<tr>
+								<td scope="row">{{++ $i }}</td>
+                            	<td>{{ $item->jenis_kontak }}</td>
+                            	<td class="text-center">
+
+									<form action="/masterkontak/hapus/{{$item->id}}" method="post">
+										@csrf  
+                                	<button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+								</form> 
+
+                            	</td>
+                        	</tr>
+                        	@endforeach
 						</tbody>
 					</table>
-                   
+					<div class="card-footer d-flex justify-content-end">
+                   <div style="font-weight: 500; "> 
+							<a href="/tambahjenis" class="btn btn-success">Tambah Kontak</a>
+						</div>
+					</div>
 			    </div>
 		    </div>
 		</div>
@@ -55,7 +75,7 @@
                             	<td>{{ $item->nama }}</td>
                             	<td class="text-center">
                                 	<a class="btn btn-info" onclick="show({{ $item->id }})"><i class="fas fa-folder-open"></i></a>
-                                	<a class="btn btn-info"><i class="fas fa-plus"></i></a>
+                                	<a class="btn btn-info" href="/masterkontak/create/{{ $item->id }}"><i class="fas fa-plus"></i></a>
                             	</td>
                         	</tr>
                         	@endforeach

@@ -9,11 +9,11 @@ class project extends Model
 {
     protected $table = 'project';
     protected $guarded = ['id'];
-    protected $fillabel = [
+    protected $fillable = [
         'id_siswa',
         'nama_project',
         'deskripsi',
-        'tanggal',
+        'tanggl',
     ];
     public function siswa (){
         return$this->belongsTo('App\Models\siswa', 'id_siswa');

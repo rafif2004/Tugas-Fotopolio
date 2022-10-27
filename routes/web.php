@@ -47,10 +47,15 @@ Route::get('/Pro', function () {
 Route::middleware('auth')->group(function(){
     Route::get('mastersiswa/{id_siswa}/hapus', [SiswaController::class, 'hapus'])->name('mastersiswa.hapus');
     Route::get('masterproject/tambah/{id}', [ProjectController::class, 'tambah'])->name('masterproject.tambah');
-    Route::post('masterproject/tambah/{id}', [ProjectController::class, 'store'])->name('masterproject.store');
     Route::post('logout', [LoginController::class, 'logout']);
     Route::resource('/dashboard', DashboardController::class);
     Route::resource('/masterproject', ProjectController::class);
     Route::resource('/masterkontak', KontakController::class);
     Route::resource('/mastersiswa', SiswaController::class);
+    Route::get('/masterkontak/create/{id}', [KontakController::class, 'create']);
+    Route::get('/tambahjenis', [KontakController::class, 'tambahjenisview']);
+    Route::post('/tambahjenis/store', [KontakController::class, 'tambahjenis']);
+    Route::post('/masterkontak/store/{id}', [KontakController::class, 'store']);
+    Route::post('/masterkontak/hapus/{id}', [KontakController::class, 'hapus']);
+
 });

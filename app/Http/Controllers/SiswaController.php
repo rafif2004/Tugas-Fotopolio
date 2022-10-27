@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use App\Models\siswa;
+use App\Models\kontak;
+use App\Models\project;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 class SiswaController extends Controller
@@ -43,10 +45,10 @@ class SiswaController extends Controller
     public function store(Request $request)
     {
         $message=[
-            'required'=>':attribute harus di isi YGY',
-            'min'=>':attribute minimal :min karakter ya coy',
-            'max'=>':attribute maksimal :max karakter ya coy',
-            'numeric'=>':attribut harus di isi angka cak!!',
+            'required'=>':attribute harus di isi yaa...',
+            'min'=>':attribute minimal :min karakter ya...',
+            'max'=>':attribute maksimal :max karakter ya...',
+            'numeric'=>':attribut harus di isi angka',
             'mimes'=>':gambar harus berupa jpg atau png' 
         ];
 
@@ -90,10 +92,10 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        $siswa=Siswa::find($id);
+        $siswa=siswa::find($id);
         $kontak=$siswa->kontak()->get();
-        // return($kontak);
-        return view('siswa.ShowSiswa', compact('siswa','kontak'));
+        $project=$siswa->project()->get();
+        return view('siswa.ShowSiswa', compact('siswa','kontak', 'project'));
     }
 
     /**
@@ -118,10 +120,10 @@ class SiswaController extends Controller
     public function update(Request $request, $id)
     {
         $message=[
-            'required'=>':attribute harus di isi YGY',
-            'min'=>':attribute minimal :min karakter ya coy',
-            'max'=>':attribute maksimal :max karakter ya coy',
-            'numeric'=>':attribut harus di isi angka cak!!',
+            'required'=>':attribute harus di isi yaa...',
+            'min'=>':attribute minimal :min karakter ya...',
+            'max'=>':attribute maksimal :max karakter ya...',
+            'numeric'=>':attribut harus di isi angka',
             'mimes'=>':gambar harus berupa jpg atau png' 
         ];
 

@@ -1,6 +1,6 @@
 @extends('master.admin')
-@section('title', 'Tambah Kontak')
-@section('content-title', 'Tambah Kontak')
+@section('title', 'Edit Kontak')
+@section('content-title', 'Edit Kontak')
 @section('content')
 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -13,21 +13,14 @@
                     @endif
 <div class="card shadow mb-4">
     <div class="card-body">
-    <form method="post" enctype="multipart/form-data" action="{{ url('masterkontak/store' , $siswa->id) }}">
+    <form method="post" enctype="multipart/form-data" action="{{ url('tambahjenis/store') }}">
             @csrf
-            <input type="hidden" name="siswa_id" value="{{$siswa->id}}">
+            <input type="hidden">
             <div class="form-group">
-                <label for="nama">Jenis</label>
-                <select name="jenis_kontak_id" id="jenis_kontak_id" class="form-control">
-                    <option >Pilih Kontak</option>
-                    @foreach ($jenis as $item)
-                        <option value="{{ $item->id }}">{{ $item->jenis_kontak }}</option>
-                    @endforeach
-                </select>
             </div>
             <div class="form-group">
-                <label for="nama">Deskripsi</label>
-                <textarea type="deskripsi" id="deskripsi" name="deskripsi" class="form-control"></textarea>
+                <label for="nama">Tambah Jenis Kontak</label>
+                <textarea type="Tambah Jenis Kontak" id="Tambah Jenis Kontak" name="jenis_kontak" class="form-control"></textarea>
             </div>
             <br>
             <div class="form-group">
