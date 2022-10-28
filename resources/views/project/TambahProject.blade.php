@@ -15,7 +15,6 @@
     @csrf
     <input type="hidden" name="id_siswa" value="{{$siswa->id}}">
     <div class="form-group">
-        <input type="hidden" name="id_siswa" value="{{ $siswa->id }}">
         <label for="nama">NAMA PROJECT</label>
         <input type="text" class="form-control" id="nama_project" name="nama_project" value="{{ old('nama_project') }}">
     </div>
