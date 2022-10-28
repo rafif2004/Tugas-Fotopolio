@@ -9,8 +9,6 @@
         <div class="card-body">
             <strong>Nama Project</strong>
             <p>{{ $item->nama_project }}</p>
-            <strong>Tanggal Project</strong>
-            <p>{{ $item->tanggl }}</p>
             <strong>Deskripsi Project</strong>
             <p>{{ $item->deskripsi }}</p>
         </div>
