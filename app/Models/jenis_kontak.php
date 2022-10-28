@@ -14,6 +14,6 @@ class jenis_kontak extends Model
     protected $table = 'jenis_kontak';
 
     public function siswa (){
-        return $this->belongsToMany('App\models\siswa', 'jenis_kontak_siswa');
+        return $this->belongsToMany('App\Models\siswa', 'jenis_kontak_siswa');
     }
 }
