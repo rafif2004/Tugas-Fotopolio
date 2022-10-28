@@ -20,16 +20,6 @@ class ProjectController extends Controller
         return view('master.masterproject', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('project.TambahProject');
-    }
-
     public function tambah($id)
     {
         $siswa=siswa::find($id);
