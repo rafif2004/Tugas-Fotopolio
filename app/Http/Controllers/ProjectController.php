@@ -50,7 +50,7 @@ class ProjectController extends Controller
         project::create([
             'id_siswa' => $request->id_siswa,
             'nama_project'=> $request -> nama_project,
-            'deskripsi'=> $request -> deskripsi
+            'deskripsi'=> $request -> deskripsi,
         ]);
 
         Session::flash('success', "Data Berhasil Di Tambahkan");
