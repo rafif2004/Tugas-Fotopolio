@@ -44,6 +44,7 @@ class ProjectController extends Controller
         $this->validate($request,[
             'nama_project'=>'required|max:30',
             'deskripsi'=>'required|min:5',
+            'tanggl'=>'required'
         ], $message);
 
         //insert data
@@ -51,6 +52,7 @@ class ProjectController extends Controller
             'id_siswa' => $request->id_siswa,
             'nama_project'=> $request -> nama_project,
             'deskripsi'=> $request -> deskripsi,
+            'tanggl'=> $request -> tanggl
         ]);
 
         Session::flash('success', "Data Berhasil Di Tambahkan");
