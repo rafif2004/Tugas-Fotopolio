@@ -9,12 +9,7 @@ class project extends Model
 {
     protected $table = 'project';
     protected $guarded = ['id'];
-    protected $fillable = [
-        'id_siswa',
-        'nama_project',
-        'deskripsi',
-        'tanggl',
-    ];
+    
     public function siswa (){
         return$this->belongsTo('App\Models\siswa', 'id_siswa');
     }

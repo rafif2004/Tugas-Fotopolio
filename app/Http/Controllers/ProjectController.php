@@ -67,7 +67,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project=Siswa::find($id)->project()->get();
+        $project=siswa::find($id)->project()->get();
         return view('project.ShowProject', compact('project'));
     }
 

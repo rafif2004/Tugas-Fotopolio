@@ -35,7 +35,7 @@
 									<form action="/masterkontak/hapus/{{$item->id}}" method="post">
 										@csrf  
                                 	<button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-								</form> 
+									</form> 
 
                             	</td>
                         	</tr>

@@ -1,3 +1,4 @@
+
 @if($project->isEmpty())
     <h6>Siswa Belum Memiliki Project</h6>
 @else
@@ -15,12 +16,12 @@
             <p>{{ $item->deskripsi }}</p>
         </div>
         <div class="card-footer">  
-            <form action="/masterproject/{{$item->id}}" method="post">
+            <form action="/masterproject/{{$item->id}}" method="post" class="d-inline-flex">
             @csrf
             @method('delete')    
                 <button type="submit" class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></button>
-                <a href="{{ route('masterproject.edit', $item->id)}}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>    
             </form>
+            <a href="{{ route('masterproject.edit', $item->id)}}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>    
         </div>
     </div>
     <br>
