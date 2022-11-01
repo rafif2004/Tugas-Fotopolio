@@ -58,7 +58,7 @@ class ProjectController extends Controller
 
         project::create([
             'id_siswa' => $request -> id_siswa,
-            'nama_project' => $request -> nama_project,
+            'nama project' => $request -> nama_project,
             'deskripsi' => $request -> deskripsi,
             'tanggl' => $request -> tanggl
         ]);
