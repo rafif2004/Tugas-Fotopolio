@@ -48,7 +48,7 @@ class ProjectController extends Controller
         ], $message);
 
         //insert data
-        $project= new project();
+        $project= new project;
            $project->id_siswa = $request->id_siswa;
            $project->nama_project= $request->nama_project;
            $project->deskripsi= $request->deskripsi;

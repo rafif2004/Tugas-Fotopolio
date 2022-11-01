@@ -47,6 +47,7 @@ Route::get('/Pro', function () {
 Route::middleware('auth')->group(function(){
     Route::get('mastersiswa/{id_siswa}/hapus', [SiswaController::class, 'hapus'])->name('mastersiswa.hapus');
     Route::get('masterproject/tambah/{id}', [ProjectController::class, 'tambah'])->name('masterproject.tambah');
+    Route::post('masterproject/store', [ProjectController::class, 'store']);
     Route::post('logout', [LoginController::class, 'logout']);
     Route::resource('/dashboard', DashboardController::class);
     Route::resource('/masterproject', ProjectController::class);
