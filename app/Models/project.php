@@ -10,7 +10,7 @@ class project extends Model
     protected $table = 'project';
     protected $fillable = [
         'id_siswa',
-        'nama_project',
+        'nama project',
         'deskripsi',
         'tanggl',
     ];
