@@ -11,7 +11,7 @@
                         </ul>
                     </div>
                     @endif
-<form method="post" enctype="multipart/form-data" action="{{ route('masterproject.store', $siswa->id) }}">
+<form method="post" enctype="multipart/form-data" action="{{ route('masterproject.store') }}">
     @csrf
     <input type="hidden" name="id_siswa" value="{{$siswa->id}}">
     <div class="form-group">
