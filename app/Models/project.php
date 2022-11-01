@@ -15,6 +15,6 @@ class project extends Model
         'tanggl',
     ];
     public function siswa (){
-        return$this->belongsTo('App\Models\siswa', 'id_siswa');
+        return$this->belongsTo('App\Models\siswa', 'id');
     }
 }
