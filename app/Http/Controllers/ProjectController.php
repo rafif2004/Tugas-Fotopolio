@@ -47,13 +47,22 @@ class ProjectController extends Controller
             'tanggl'=>'required'
         ], $message);
 
-        //insert data
-        $project= new project;
-           $project->id_siswa = $request->id_siswa;
-           $project->nama_project= $request->nama_project;
-           $project->deskripsi= $request->deskripsi;
-           $project->tanggl= $request->tanggl;
-           $project->save();
+        // //insert data
+        // $project= new project;
+        //    $project->id_siswa = $request->id_siswa;
+        //    $project->nama_project= $request->nama_project;
+        //    $project->deskripsi= $request->deskripsi;
+        //    $project->tanggl= $request->tanggl;
+        //    $project->save();
+
+
+        project::create([
+            'id_siswa' => $request -> id_siswa,
+            'nama_project' => $request -> nama_project,
+            'deskripsi' => $request -> deskripsi,
+            'tanggl' => $request -> tanggl
+        ]);
+        
 
         Session::flash('success', "Data Berhasil Di Tambahkan");
         return redirect('/masterproject');
