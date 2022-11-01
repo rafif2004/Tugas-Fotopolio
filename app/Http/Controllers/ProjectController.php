@@ -48,12 +48,12 @@ class ProjectController extends Controller
         ], $message);
 
         //insert data
-        project::create([
-            'id_siswa' => $request->id_siswa,
-            'nama_project'=> $request -> nama_project,
-            'deskripsi'=> $request -> deskripsi,
-            'tanggl'=> $request -> tanggl
-        ]);
+        $project= new project();
+           $project->id_siswa = $request->id_siswa;
+           $project->nama_project= $request->nama_project;
+           $project->deskripsi= $request->deskripsi;
+           $project->tanggl= $request->tanggl;
+           $project->save();
 
         Session::flash('success', "Data Berhasil Di Tambahkan");
         return redirect('/masterproject');
